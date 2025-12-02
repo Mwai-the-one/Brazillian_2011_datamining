@@ -137,10 +137,10 @@ The K-Means clustering yielded four distinct customer segments based on their av
 
 | Cluster | Avg. R Score | Avg. F Score | Avg. M Score | Segment Name | Rationale & Recommended Action |
 | :---: | :---: | :---: | :---: | :---: | :--- |
-| **2** | 4.2 (Highest) | 3.6 (High) | 3.6 (High) | **VIP / Champions** | Highest scores across all metrics. **Action:** Implement exclusive **loyalty rewards** and high-touch service to maintain retention. |
-| **0** | 2.5 (Medium) | 2.7 (Medium) | 2.9 (Medium-High) | **Average Value** | Solid customers, but with room for growth. **Action:** Focus on **upselling** and personalized offers to move them into the VIP category. |
-| **3** | 1.5 (Low) | 2.3 (Low-Medium) | 2.3 (Low-Medium) | **Needs Attention** | Low Recency (1.5) and moderate F/M. Could be New Customers or Hibernating. **Action:** **Onboarding** or reactivation campaigns to encourage repeat purchases. |
-| **1** | 1.0 (Lowest) | 1.8 (Low) | 1.8 (Low) | **Churn Risk / Lost** | Very low Recency indicates they haven't bought recently. **Action:** Launch aggressive **win-back campaigns** and discounts to reactivate them. |
+| **1** | 4.2 (Highest) | 3.6 (High) | 3.6 (High) | **VIP / Champions** | Highest scores across all metrics. **Action:** Implement exclusive **loyalty rewards** and high-touch service to maintain retention. |
+| **3** | 2.5 (Medium) | 2.7 (Medium) | 2.9 (Medium-High) | **Average Value** | Solid customers, but with room for growth. **Action:** Focus on **upselling** and personalized offers to move them into the VIP category. |
+| **2** | 1.5 (Low) | 2.3 (Low-Medium) | 2.3 (Low-Medium) | **Needs Attention** | Low Recency (1.5) and moderate F/M. Could be New Customers or Hibernating. **Action:** **Onboarding** or reactivation campaigns to encourage repeat purchases. |
+| **0** | 1.0 (Lowest) | 1.8 (Low) | 1.8 (Low) | **Churn Risk / Lost** | Very low Recency indicates they haven't bought recently. **Action:** Launch aggressive **win-back campaigns** and discounts to reactivate them. |
 
 Key Takeaways
 

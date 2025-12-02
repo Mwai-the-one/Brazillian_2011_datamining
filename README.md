@@ -40,6 +40,23 @@ Our analysis focuses on solving key business problems through data-driven insigh
 
 ---
 
+
+### Members contribution
+## Week 2 member 2 Gachunga Gift
+Detailed Week 2 Contribution Summary
+
+During Week 2, significant progress was made in building a full data preparation pipeline, starting from raw Excel data to clean, structured, encoded datasets ready for mining tasks. The work involved ETL development, data cleaning, missing value handling, outlier detection, feature engineering, scaling, and monthly one-hot encoding.
+
+The process began with the creation of an ETL pipeline that loaded the raw Excel dataset, standardized column names, and converted key fields such as InvoiceDate into the proper datetime format. Invalid rows containing zero or negative Quantity or UnitPrice were removed, eliminating 11,699 faulty transactions. The pipeline provided clear validation feedback by printing the dataset’s initial and final shapes (from 547,328 rows down to 514,256) and returned a cleaned DataFrame that served as the foundation for the rest of the processing.
+
+Further cleaning included removing 8,065 duplicate records to ensure data consistency. Missing values were carefully handled: missing country names were replaced with "Unknown", rows missing critical identifiers such as InvoiceDate, InvoiceNo, or StockCode were removed entirely, and missing CustomerID fields were filled with -1 so those transactions could still be used analytically. Negative quantities were preserved but flagged using a new IsReturn column to distinguish returned items. Country naming inconsistencies (like “RSA”, “EIRE”, “European Community”) were standardized to more accurate and uniform names. Additional analytical features were engineered, including TotalPrice and date-based fields such as Year, Month, and Day derived from InvoiceDate. The cleaned dataset was then exported to cleaned_data.csv.
+
+Outlier detection was performed using the Interquartile Range (IQR) method. Outliers in Quantity and UnitPrice were identified, with clear upper and lower bounds calculated for each numeric variable. Sample outlier records were displayed to provide context on the data points that fell outside acceptable thresholds. Multiple strategies for handling these outliers were implemented: removing extreme values entirely, applying Winsorization to cap values within IQR limits, and eliminating records with zero or negative prices. These different approaches resulted in several alternative cleaned datasets (df_clean, df_capped, df_no_zero_price), offering flexibility for subsequent analysis and model selection.
+
+To prepare the data for market basket mining, scaling was applied to Quantity and UnitPrice using MinMaxScaler to ensure consistent ranges for algorithms sensitive to value magnitude. The dataset was then segmented by month to allow month-specific transaction pattern analysis. For each month, transactions were reconstructed by grouping products under each invoice, creating realistic item lists per transaction. The TransactionEncoder was used to convert these item lists into one-hot encoded matrices, with sparse matrix handling implemented to preserve memory efficiency. The encoded datasets for each month were saved separately, such as encoded_products_Month_11.csv for November and encoded_products_Month_12.csv for December, providing ready-to-use inputs for Apriori and association rule mining in later stages.
+
+Overall, the Week 2 work produced a comprehensive, well-cleaned, validated, and fully encoded dataset pipeline that transforms raw retail data into structured, analysis-ready inputs suitable for advanced data mining processes.
+
 ## 🧾 Dataset Description
 
 **📚 Source:** [Brazilian E-Commerce Public Dataset by Olist (Kaggle)](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)  

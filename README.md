@@ -127,18 +127,26 @@ Implementation Steps
 
     Cluster Assignment and Visualization: The Cluster ID was assigned to each customer. The Frequency vs. Monetary scatter plots were generated, with the second, "Zoomed In" plot, effectively mitigating the visual distortion caused by extreme outliers (very high Frequency/Monetary customers) to show the main cluster distribution more clearly.
 
-## Results and Analysis of K=4 Clusters
+## A. RFM Cluster Profiles and Strategic Recommendations
 
-The validation focused on analyzing the average RFM scores and the size of each of the four clusters.
-A. Cluster Characteristics (Average RFM Score)
+The K-Means Clustering resulted in four distinct customer segments based on their average RFM scores (where scores are on a 1-5 scale, with 5 being the best in each category). Analyzing these scores is the key step in naming the segments and defining their specific marketing strategies.
 
-The bar chart of average RFM scores per cluster (where R=5 is most recent, F/M=5 is highest value) is the key to naming the segments. | Cluster | Avg. R Score (Recency) | Avg. F Score (Frequency) | Avg. M Score (Monetary) | Segmentation Name | Business Insight (Based on your notes) | | :------ | :--------------------- | :----------------------- | :----------------------- | :------------------ | :------------------------------------- | | 0 | 2.5 (Medium) | 2.7 (Medium) | 2.9 (Medium-High) | Average/Medium | Medium customers → upselling strategies | | 1 | 1.0 (Lowest) | 1.8 (Low) | 1.8 (Low) | Churn Risk/Lost | Low value, inactive customers → offer discounts | | 2 | 4.2 (Highest) | 3.6 (High) | 3.6 (High) | VIP/Champions | High value VIP customers → loyalty rewards | | 3 | 1.5 (Low) | 2.3 (Low-Medium) | 2.3 (Low-Medium) | New/Infrequent | New customers → onboarding campaigns |
+## 👥 RFM Cluster Profiles and Strategic Recommendations
 
-Note on your notes: Your business insights seem to have mixed the cluster meanings, especially Cluster 1 and Cluster 3 are typically defined differently in standard RFM. Based purely on the data:
+The K-Means clustering yielded four distinct customer segments based on their average RFM scores (1-5 scale, with 5 being the highest/best).
 
-    Cluster 2 (VIP/Champions): Highest scores across all metrics. These are your best customers.
+| Cluster | Avg. R Score | Avg. F Score | Avg. M Score | Segment Name | Rationale & Recommended Action |
+| :---: | :---: | :---: | :---: | :---: | :--- |
+| **2** | 4.2 (Highest) | 3.6 (High) | 3.6 (High) | **VIP / Champions** | Highest scores across all metrics. **Action:** Implement exclusive **loyalty rewards** and high-touch service to maintain retention. |
+| **0** | 2.5 (Medium) | 2.7 (Medium) | 2.9 (Medium-High) | **Average Value** | Solid customers, but with room for growth. **Action:** Focus on **upselling** and personalized offers to move them into the VIP category. |
+| **3** | 1.5 (Low) | 2.3 (Low-Medium) | 2.3 (Low-Medium) | **Needs Attention** | Low Recency (1.5) and moderate F/M. Could be New Customers or Hibernating. **Action:** **Onboarding** or reactivation campaigns to encourage repeat purchases. |
+| **1** | 1.0 (Lowest) | 1.8 (Low) | 1.8 (Low) | **Churn Risk / Lost** | Very low Recency indicates they haven't bought recently. **Action:** Launch aggressive **win-back campaigns** and discounts to reactivate them. |
 
-    Cluster 1 (Churn Risk/Lost): Lowest Recency score (1.0) means they haven't purchased in the longest time. They are the most inactive.
+Key Takeaways
+
+    Cluster 2 (VIP/Champions) is the most valuable segment and should be prioritized for retention efforts.
+
+    Cluster 1 (Churn Risk/Lost) represents the most immediate challenge and requires urgent, incentive-based intervention.
 
 ## B. Cluster Sizes
 

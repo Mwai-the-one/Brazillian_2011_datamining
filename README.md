@@ -57,6 +57,55 @@ To prepare the data for market basket mining, scaling was applied to Quantity an
 
 Overall, the Week 2 work produced a comprehensive, well-cleaned, validated, and fully encoded dataset pipeline that transforms raw retail data into structured, analysis-ready inputs suitable for advanced data mining processes.
 
+Member 3 – Statistical Analysis & Correlation Studies
+
+As Member 3, I was responsible for leading the statistical analysis and correlation assessment phase of the Exploratory Data Analysis (EDA). My role focused on extracting meaningful numerical insights from the cleaned dataset and quantifying relationships between key customer behavior variables to support informed decision-making and the upcoming data mining phase.
+
+ Summary Statistics & Distribution Analysis
+
+I computed descriptive statistics for core numerical variables such as Quantity and TotalPrice using summary measures (mean, standard deviation, min, max, and quartiles). This provided a clear overview of purchase behavior, spending patterns, and the overall spread of transaction values. To further understand the data, I:
+
+Generated distribution plots to examine how purchases are spread across different countries.
+
+Identified the number of unique values in key categorical variables such as Country and Description to evaluate product diversity and market coverage.
+
+Country-Level Statistical Insights
+
+I analyzed average purchase values per country, allowing us to identify regions with the highest average customer spending. This supports geographic market performance analysis and helps prioritize high-value customer regions.
+
+Correlation & Relationship Analysis (RFM Metrics)
+
+To support customer segmentation and behavioral analysis, I conducted a detailed correlation study using the RFM (Recency, Frequency, Monetary) metrics:
+
+Computed the Pearson correlation between Recency and Monetary value to understand how recent customer activity relates to spending behavior.
+
+Generated a full correlation matrix for Recency, Frequency, and Monetary values to quantify inter-variable relationships.
+
+Visualized these relationships using a correlation heatmap, providing an intuitive interpretation of customer behavior dynamics.
+
+These results were crucial in validating assumptions for RFM-based customer segmentation and guiding feature selection for the mining phase.
+
+✅ Key Impact on the Project
+
+My contributions ensured that:
+
+The dataset was statistically explored and validated beyond basic visualization.
+
+Hidden relationships between customer behavior variables were uncovered and quantified.
+
+The team gained a solid numerical foundation for segmentation, predictive modeling, and business interpretation.
+
+The RFM structure was statistically justified before being used in further clustering and mining tasks.
+✅ Importance of Week 3 to the Overall Project
+
+Week 3 serves as the analytical backbone of the project, bridging the gap between data cleaning (Week 2) and data mining/modeling (subsequent weeks). The statistical and correlation analyses carried out during this week ensure that:
+
+The dataset is well-understood, reliable, and analytically sound.
+
+Features selected for mining are justified by statistical evidence.
+
+All predictive, clustering, and rule-mining models are built on a validated exploratory foundation rather than assumptions.
+
 ## 🧾 Dataset Description
 
 **📚 Source:** [Brazilian E-Commerce Public Dataset by Olist (Kaggle)](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)  

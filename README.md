@@ -107,7 +107,8 @@ Features selected for mining are justified by statistical evidence.
 
 All predictive, clustering, and rule-mining models are built on a validated exploratory foundation rather than assumptions.
 
-1. Customer Segmentation (K-Means & RFM) 🧑‍🤝‍🧑
+### Week 4 member 4 Dennis
+## 1. Customer Segmentation (K-Means & RFM) 🧑‍🤝‍🧑
 
 This part of the project aimed to group customers into distinct segments based on their purchasing behavior (RFM metrics).
 Implementation Steps
@@ -126,7 +127,7 @@ Implementation Steps
 
     Cluster Assignment and Visualization: The Cluster ID was assigned to each customer. The Frequency vs. Monetary scatter plots were generated, with the second, "Zoomed In" plot, effectively mitigating the visual distortion caused by extreme outliers (very high Frequency/Monetary customers) to show the main cluster distribution more clearly.
 
-Results and Analysis of K=4 Clusters
+## Results and Analysis of K=4 Clusters
 
 The validation focused on analyzing the average RFM scores and the size of each of the four clusters.
 A. Cluster Characteristics (Average RFM Score)
@@ -139,7 +140,7 @@ Note on your notes: Your business insights seem to have mixed the cluster meanin
 
     Cluster 1 (Churn Risk/Lost): Lowest Recency score (1.0) means they haven't purchased in the longest time. They are the most inactive.
 
-B. Cluster Sizes
+## B. Cluster Sizes
 
 The bar chart for customer counts provides context on the size of each segment. * Cluster 2 (VIP/Champions) is the largest segment (over 2000 customers), which is highly positive for the business.
 
@@ -147,7 +148,7 @@ The bar chart for customer counts provides context on the size of each segment. 
 
     Cluster 1 (Churn Risk/Lost) is the smallest (approx. 500 customers).
 
-C. Snake Plot
+## C. Snake Plot
 
 The Snake Plot visualizes the average scaled RFM values (actual Recency/Frequency/Monetary values, not the 1-5 scores). It clearly shows the profile of each cluster: * Cluster 2 (Green Line - VIP/Champions): Stands out dramatically with the highest scaled Frequency and Monetary values, confirming they are the highest value group. They also have the highest scaled Recency (most recent purchases).
 
@@ -155,7 +156,7 @@ The Snake Plot visualizes the average scaled RFM values (actual Recency/Frequenc
 
     Clusters 1 and 3 (Yellow and Blue Lines): Show generally low scaled values across all metrics compared to Cluster 2.
 
-2. Market Basket Analysis (FP-Growth/Apriori) 🛒
+## 2. Market Basket Analysis (FP-Growth/Apriori) 🛒
 
 This part aimed to find relationships between products purchased together to derive Association Rules, which are useful for cross-selling and product placement.
 Implementation Steps
@@ -175,7 +176,7 @@ Implementation Steps
     Rule Validation & Export: The top rules were printed, sorted by Lift, which is the most critical metric for valuable rules (Lift > 1 indicates a positive association). Rules with a lift greater than 1 were exported for future use.
 
 Results and Analysis of Association Rules
-A. Combined Data Analysis (FP-Growth)
+# A. Combined Data Analysis (FP-Growth)
 
 The frequent itemsets and association rules derived from the full year provide the most robust, generalizable patterns. The generated visualisations, such as the top itemsets, show which combinations of products are bought together most frequently (high Support).
 
@@ -183,7 +184,7 @@ The frequent itemsets and association rules derived from the full year provide t
 
         Example: If a top rule is {Item A} → {Item B} (Lift=5.0), it means customers who buy Item A are 5 times more likely to buy Item B than an average customer.
 
-B. Monthly Analysis (Apriori)
+# B. Monthly Analysis (Apriori)
 
 Running Apriori month-by-month allows you to identify seasonal or short-term trends in product associations that might be masked in the annual data.
 

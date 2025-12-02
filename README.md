@@ -107,6 +107,90 @@ Features selected for mining are justified by statistical evidence.
 
 All predictive, clustering, and rule-mining models are built on a validated exploratory foundation rather than assumptions.
 
+1. Customer Segmentation (K-Means & RFM) 🧑‍🤝‍🧑
+
+This part of the project aimed to group customers into distinct segments based on their purchasing behavior (RFM metrics).
+Implementation Steps
+
+    Data Preparation: The first step was filtering the rfm_df to exclude unknown customers (CustomerID != '-1'). This cleaned dataset was then MinMax scaled to normalize the Recency, Frequency, and Monetary values between 0 and 1. This scaling is crucial for K-Means, which relies on distance calculations.
+
+    Optimal K Determination (Silhouette Score):
+
+        You iterated K-Means from K=2 to K=10.
+
+        The Silhouette Score was calculated for each K to measure how similar an object is to its own cluster compared to other clusters.
+
+        Result Analysis (Silhouette Plot): The printed scores and the plot show that K=2 (Score: 0.7397) yielded the highest Silhouette Score. This result statistically suggested that two clusters were the most well-defined and separated groups.
+
+    Final Clustering: Although K=2 was optimal, you chose K=4 for the final segmentation to introduce more variety and potentially discover more granular customer segments, acknowledging that the higher K would result in slightly less distinct clusters (Score: 0.6132).
+
+    Cluster Assignment and Visualization: The Cluster ID was assigned to each customer. The Frequency vs. Monetary scatter plots were generated, with the second, "Zoomed In" plot, effectively mitigating the visual distortion caused by extreme outliers (very high Frequency/Monetary customers) to show the main cluster distribution more clearly.
+
+Results and Analysis of K=4 Clusters
+
+The validation focused on analyzing the average RFM scores and the size of each of the four clusters.
+A. Cluster Characteristics (Average RFM Score)
+
+The bar chart of average RFM scores per cluster (where R=5 is most recent, F/M=5 is highest value) is the key to naming the segments. | Cluster | Avg. R Score (Recency) | Avg. F Score (Frequency) | Avg. M Score (Monetary) | Segmentation Name | Business Insight (Based on your notes) | | :------ | :--------------------- | :----------------------- | :----------------------- | :------------------ | :------------------------------------- | | 0 | 2.5 (Medium) | 2.7 (Medium) | 2.9 (Medium-High) | Average/Medium | Medium customers → upselling strategies | | 1 | 1.0 (Lowest) | 1.8 (Low) | 1.8 (Low) | Churn Risk/Lost | Low value, inactive customers → offer discounts | | 2 | 4.2 (Highest) | 3.6 (High) | 3.6 (High) | VIP/Champions | High value VIP customers → loyalty rewards | | 3 | 1.5 (Low) | 2.3 (Low-Medium) | 2.3 (Low-Medium) | New/Infrequent | New customers → onboarding campaigns |
+
+Note on your notes: Your business insights seem to have mixed the cluster meanings, especially Cluster 1 and Cluster 3 are typically defined differently in standard RFM. Based purely on the data:
+
+    Cluster 2 (VIP/Champions): Highest scores across all metrics. These are your best customers.
+
+    Cluster 1 (Churn Risk/Lost): Lowest Recency score (1.0) means they haven't purchased in the longest time. They are the most inactive.
+
+B. Cluster Sizes
+
+The bar chart for customer counts provides context on the size of each segment. * Cluster 2 (VIP/Champions) is the largest segment (over 2000 customers), which is highly positive for the business.
+
+    Cluster 0 (Average/Medium) is the next largest (approx. 1000 customers).
+
+    Cluster 1 (Churn Risk/Lost) is the smallest (approx. 500 customers).
+
+C. Snake Plot
+
+The Snake Plot visualizes the average scaled RFM values (actual Recency/Frequency/Monetary values, not the 1-5 scores). It clearly shows the profile of each cluster: * Cluster 2 (Green Line - VIP/Champions): Stands out dramatically with the highest scaled Frequency and Monetary values, confirming they are the highest value group. They also have the highest scaled Recency (most recent purchases).
+
+    Cluster 0 (Purple Line - Average/Medium): Has moderately high values, especially in Monetary.
+
+    Clusters 1 and 3 (Yellow and Blue Lines): Show generally low scaled values across all metrics compared to Cluster 2.
+
+2. Market Basket Analysis (FP-Growth/Apriori) 🛒
+
+This part aimed to find relationships between products purchased together to derive Association Rules, which are useful for cross-selling and product placement.
+Implementation Steps
+
+    Data Preparation: Twelve monthly product encoding dataframes were concatenated into a single basket_df. This dataframe, which represents transactions (rows) and products (columns with 0/1 for presence/absence), was then optimized by converting it to a boolean type, which is a key step for memory efficiency in association rule mining.
+
+    Frequent Itemset Generation:
+
+        Combined Data (FP-Growth): The FP-Growth algorithm (an optimized alternative to Apriori) was applied to the entire combined dataset. A minimum support of 0.02 was used.
+
+        Monthly Data (Apriori): The Apriori algorithm was applied separately to each of the 12 monthly datasets, also with a minimum support of 0.02.
+
+    Association Rule Generation:
+
+        Rules were generated from the frequent itemsets using a minimum confidence of 0.3 for both the combined (FP-Growth) and monthly (Apriori) results.
+
+    Rule Validation & Export: The top rules were printed, sorted by Lift, which is the most critical metric for valuable rules (Lift > 1 indicates a positive association). Rules with a lift greater than 1 were exported for future use.
+
+Results and Analysis of Association Rules
+A. Combined Data Analysis (FP-Growth)
+
+The frequent itemsets and association rules derived from the full year provide the most robust, generalizable patterns. The generated visualisations, such as the top itemsets, show which combinations of products are bought together most frequently (high Support).
+
+    Interpretation of Top Rules (sorted by Lift): Rules with a high Lift indicate a strong relationship between the antecedent (product bought) and the consequent (product also bought), beyond random chance. These are the most valuable for recommendations.
+
+        Example: If a top rule is {Item A} → {Item B} (Lift=5.0), it means customers who buy Item A are 5 times more likely to buy Item B than an average customer.
+
+B. Monthly Analysis (Apriori)
+
+Running Apriori month-by-month allows you to identify seasonal or short-term trends in product associations that might be masked in the annual data.
+
+    Example: A specific combination of products might have a very high support in December (Christmas items) but low support the rest of the year. This helps tailor monthly promotions.
+
+The monthly plots of the Top 15 Frequent Itemsets (Combinations Only) are crucial for visually inspecting the consistency and changes in popular product bundles throughout the year.
+
 ## 🧾 Dataset Description
 
 **📚 Source:** [Brazilian E-Commerce Public Dataset by Olist (Kaggle)](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)  

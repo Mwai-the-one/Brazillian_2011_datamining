@@ -265,6 +265,42 @@ By the end of this project, we will have:
 🛍️ **Actionable business insights** for e-commerce strategy  
 🎨 A **mini dashboard** for storytelling and presentation  
 
+## 📅 Week 5: Insights, Storytelling & Dashboard- Peter Kidiga
+
+### 🎯 Overview
+In this final phase (Week 5), we synthesized the findings from our ETL pipeline, Exploratory Data Analysis (EDA), and Data Mining models (Clustering & Apriori/FP-Growth) into actionable business intelligence. The goal was to translate raw data into a visual story that informs strategic decision-making.
+
+### 📂 Final Deliverables
+| File Name | Description |
+|-----------|-------------|
+| `notebooks/4_insights_dashboard.ipynb` | A Jupyter Notebook containing the "Mini Dashboard" code. It visualizes seasonality, customer clusters (Snake Plots/Scatter), and top association rules. |
+| `report/executive_summary.pdf` | A 2-page executive report summarizing the methodology, 4 key findings, and 3 strategic business recommendations. |
+| `report/presentation.pptx` | The final slide deck presenting the end-to-end data pipeline and business story. |
+
+### 📊 Dashboard Features
+The **Strategic Dashboard** in Notebook 4 visualizes:
+1.  **Seasonal Revenue Trends:** Identifies peak sales months (specifically November) for inventory planning.
+2.  **Customer Segmentation:** Visualizes the 4 K-Means clusters (VIPs, At-Risk, New, Big Spenders) based on Frequency vs. Monetary value.
+3.  **Market Basket Opportunities:** Displays the top product associations with the highest "Lift," identifying candidates for product bundling.
+4.  **Geographic Performance:** Highlights the top revenue-generating countries.
+
+### 🚀 How to Run the Dashboard
+To generate the dashboard and insights, follow these steps:
+
+1.  **Prerequisites:** Ensure the Week 4 mining results are saved. The dashboard depends on:
+    * `data/transformed/rfm_results.csv` (From Notebook 3)
+    * `data/transformed/market_basket_rules.csv` (From Notebook 3)
+2.  **Launch the Notebook:**
+    ```bash
+    jupyter notebook notebooks/4_insights_dashboard.ipynb
+    ```
+3.  **View Output:** Run all cells to generate the 5-panel Matplotlib/Seaborn visualization grid.
+
+### 💡 Key Findings
+* **Segmentation:** The "VIP" cluster drives the highest revenue despite not being the largest group; retention efforts should focus here.
+* **Associations:** High-lift rules (>1.0) exist between Tea Sets and Saucers, validating a cross-selling strategy.
+* **Seasonality:** Revenue drops significantly post-December; marketing campaigns are required in Q1 to maintain cash flow.
+
 This project showcases how **data science turns raw transactions into strategic intelligence** — helping businesses grow smarter, faster, and stronger! 💪📊  
 
 ---

@@ -306,3 +306,109 @@ This project showcases how **data science turns raw transactions into strategic 
 ---
 
 Ultimately, this project demonstrates how data science transforms raw transactions into strategic intelligence — one dataset at a time. 🔥
+
+Daisy Yano- Member 5, week 5
+Week 5: Insights Dashboard & Storytelling
+Overview
+
+This project presents a consolidated Mini Dashboard that transforms raw e-commerce data into actionable business insights. It combines exploratory data analysis, customer segmentation, market basket analysis, and geographic revenue insights to support strategic decision-making.
+
+The goal is to provide a clear, visual narrative that helps executives and managers make informed decisions based on customer behavior, product associations, and seasonal trends.
+
+Key Insights
+Seasonal Revenue Trends
+
+Highlights monthly revenue patterns to identify seasonality.
+
+Helps businesses anticipate peak periods and plan inventory accordingly.
+
+Customer Segmentation
+
+Identifies clusters of customers based on purchase frequency and spending.
+
+Supports targeted marketing strategies for high-value customers and retention campaigns for lower-frequency segments.
+
+Segment Distribution
+
+Illustrates the size and proportion of each customer segment.
+
+Guides resource allocation and marketing focus for maximum impact.
+
+Top Product Associations
+
+Reveals product bundles that frequently occur together.
+
+Supports cross-selling, upselling, and the creation of promotional bundle offers.
+
+Geographic Revenue
+
+Shows which countries or regions contribute most to revenue.
+
+Informs market expansion strategies and localized marketing campaigns.
+
+Actionable Recommendations
+
+Targeted Marketing
+
+Offer loyalty programs for high-value clusters.
+
+Reactivate low-frequency customers with engagement initiatives.
+
+Product Bundling
+
+Promote frequently bought-together products as bundles.
+
+Increase overall basket size and revenue per customer.
+
+Inventory Planning
+
+Adjust stock levels to match seasonal sales peaks.
+
+Ensure popular items are well-stocked ahead of peak months.
+
+Geographic Focus
+
+Prioritize marketing and stock planning in top-performing markets.
+
+Explore opportunities in secondary markets for growth.
+
+Project Structure
+Brazillian_2011_datamining/
+│
+├─ data/                   # Raw, transformed, and final datasets
+│
+├─ notebooks/              # Jupyter notebooks for analysis
+│
+├─ report/                 # Executive summary and documentation
+│
+└─ README.md               # Project overview and insights
+
+Full Project Summary
+
+This repository represents a comprehensive e-commerce analytics workflow. It covers the entire process from raw data collection to actionable insights:
+
+Data Cleaning & Transformation
+
+Handling missing values, correcting inconsistencies, and preparing datasets for analysis.
+
+Exploratory Data Analysis (EDA)
+
+Understanding overall trends, distributions, and correlations within the data.
+
+Customer Segmentation
+
+Using RFM analysis and clustering to identify high-value, medium, and low-value customers.
+
+Market Basket Analysis
+
+Applying Apriori algorithm to uncover product associations and bundle opportunities.
+
+Insights Dashboard & Storytelling (this part)
+
+Synthesizing findings into a visual and textual dashboard for decision-makers.
+
+Reporting
+
+Delivering an executive summary with actionable recommendations for marketing, sales, and inventory planning.
+
+Overall, this project demonstrates end-to-end data science in an e-commerce context, combining analytics, visualization, and business storytelling to guide strategic decisions and optimize revenue.

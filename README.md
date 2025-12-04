@@ -154,63 +154,104 @@ Outlier detection was performed using the Interquartile Range (IQR) method. Outl
 To prepare the data for market basket mining, scaling was applied to Quantity and UnitPrice using MinMaxScaler to ensure consistent ranges for algorithms sensitive to value magnitude. The dataset was then segmented by month to allow month-specific transaction pattern analysis. For each month, transactions were reconstructed by grouping products under each invoice, creating realistic item lists per transaction. The TransactionEncoder was used to convert these item lists into one-hot encoded matrices, with sparse matrix handling implemented to preserve memory efficiency. The encoded datasets for each month were saved separately, such as encoded_products_Month_11.csv for November and encoded_products_Month_12.csv for December, providing ready-to-use inputs for Apriori and association rule mining in later stages.
 
 Overall, the Week 2 work produced a comprehensive, well-cleaned, validated, and fully encoded dataset pipeline that transforms raw retail data into structured, analysis-ready inputs suitable for advanced data mining processes.
+📊 EXPLORATORY DATA ANALYSIS (EDA)
 
-## 🌟 Member 3: Whitney Gituara
-### 📊 Statistical Analysis & Correlation Studies
+👩‍💻 Member 3: Whitney Gituara – Statistical Analysis & Correlation Studies
 
-As Member 3, I was responsible for leading the statistical analysis and correlation assessment phase of the Exploratory Data Analysis (EDA). My role focused on extracting meaningful numerical insights from the cleaned dataset and quantifying relationships between key customer behavior variables to support informed decision-making and the upcoming data mining phase.
+As Member 3, I led the statistical analysis and correlation assessment phase of the Exploratory Data Analysis (EDA). My role focused on extracting meaningful numerical insights from the cleaned dataset and quantifying relationships between key customer behavior variables to support informed business decision-making and the upcoming data mining phase.
 
-## 📈 Summary Statistics & Distribution Analysis
+📈 SUMMARY STATISTICS & DISTRIBUTION ANALYSIS
 
-I computed descriptive statistics for core numerical variables such as Quantity and TotalPrice using summary measures (mean, standard deviation, minimum, maximum, and quartiles). This provided a clear overview of:
-✅ Purchase behavior
+Descriptive statistics were computed for the core numerical variables Quantity and TotalPrice, including the mean, standard deviation, minimum, maximum, and quartiles. This provided insight into:
+
+✅ Customer purchase behavior
 ✅ Spending patterns
-✅ The overall spread of transaction values
+✅ Data spread and variability
 
-To further understand the data, I:
-🔹 Generated distribution plots to examine how purchases are spread across different countries.
-🔹 Identified the number of unique values in key categorical variables such as Country and Description to evaluate product diversity and market coverage.
+Skewness and kurtosis were further evaluated to assess distribution shape and suitability for modeling.
 
-## 🌍 Country-Level Statistical Insights
+🌍 COUNTRY-LEVEL STATISTICAL INSIGHTS
 
-I analyzed the average purchase values per country, which allowed us to:
-📌 Identify regions with the highest average customer spending
-📌 Support geographic market performance analysis
-📌 Help prioritize high-value customer regions
+Average purchase values were computed per country to:
 
-## 🔗 Correlation & Relationship Analysis (RFM Metrics)
+✔ Identify high-spending regions
+✔ Support geographic performance comparison
+✔ Prioritize high-value customer markets
 
-To support customer segmentation and behavioral analysis, I conducted a detailed correlation study using RFM (Recency, Frequency, Monetary) metrics:
+The number of unique countries and unique product descriptions was also calculated to evaluate overall market reach and product diversity.
 
-✅ Computed the Pearson correlation between Recency and Monetary value to understand how recent customer activity relates to spending behavior.
-✅ Generated a full correlation matrix for Recency, Frequency, and Monetary values to quantify inter-variable relationships.
-✅ Visualized these relationships using a correlation heatmap, providing an intuitive interpretation of customer behavior dynamics.
+🗺️ DISTRIBUTION OF PURCHASES ACROSS COUNTRIES
 
-These results were crucial in validating assumptions for RFM-based customer segmentation and guiding feature selection for the mining phase.
+![Distribution of Purchases by Country](images/country_distribution.png)
+<img width="597" height="589" alt="image" src="https://github.com/user-attachments/assets/68b7b13e-ea5f-42a1-8b5a-62556ee920d7" />
 
-## ✅ Key Impact on the Project
+🔍 Findings
 
-My contributions ensured that:
+🇬🇧 The United Kingdom overwhelmingly dominates transaction volume.
 
-✔️ The dataset was statistically explored and validated beyond basic visualization
-✔️ Hidden relationships between customer behavior variables were uncovered and quantified
-✔️ The team gained a solid numerical foundation for
-  • Segmentation
-  • Predictive modeling
-  • Business interpretation
-✔️ The RFM structure was statistically justified before being used in further clustering and mining tasks
+🌎 All other countries contribute only a small fraction of total transactions.
 
-## 🗓️ Importance of Week 3 to the Overall Project
+⚠ Several countries exhibit minimal customer activity.
 
-Week 3 serves as the analytical backbone of the project, bridging the gap between:
-📍 Data Cleaning (Week 2) and
-📍 Data Mining & Modeling (Subsequent Weeks)
+💼 Business Interpretation
 
-The statistical and correlation analyses carried out during this week ensure that:
+The business is highly dependent on the UK market.
 
-✅ The dataset is well-understood, reliable, and analytically sound
-✅ Features selected for mining are justified by statistical evidence
-✅ All predictive, clustering, and rule-mining models are built on a validated exploratory foundation rather than assumptions
+International sales remain underdeveloped.
+
+🚀 Strategic Implication
+
+Strong opportunity exists for international market expansion.
+
+Heavy dependence on one country increases geographic business risk.
+
+🔗 CORRELATION & RELATIONSHIP ANALYSIS (RFM METRICS)
+
+![RFM Correlation Heatmap](images/rfm_correlation_heatmap.png)
+<img width="515" height="435" alt="image" src="https://github.com/user-attachments/assets/36a6559a-aa23-4ff9-be3d-8daa9b168d00" />
+
+🔍 Findings
+
+🔁 Frequency and Monetary exhibit a near-perfect positive correlation.
+
+⏳ Recency shows a weak negative relationship with both Frequency and Monetary.
+
+💳 Customers who purchase more frequently also spend more.
+
+🧠 Modeling Implication
+
+The RFM framework is statistically valid for customer segmentation.
+
+Frequency and Monetary should receive higher weighting in clustering models.
+
+💰 TOTAL PURCHASES PER COUNTRY
+![Total Purchases per Country](images/total_purchases_per_country.png)
+<img width="1187" height="590" alt="image" src="https://github.com/user-attachments/assets/8251af68-16a3-46c3-a6d7-5be69219b4ea" />
+
+🔍 Findings
+
+🇬🇧 The United Kingdom contributes the majority of total revenue.
+
+🌍 Secondary markets generate significantly lower revenue.
+
+⚠ Revenue is highly concentrated geographically.
+
+💼 Business Implication
+
+There is high exposure to financial risk due to revenue concentration.
+
+Expansion into secondary international markets is strongly recommended.
+
+⭐ KEY IMPACT OF MY CONTRIBUTION
+
+✅ Provided deep statistical validation beyond basic visualization
+✅ Quantified hidden relationships in customer purchasing behavior
+✅ Built a strong numerical foundation for customer segmentation and predictive modeling
+✅ Statistically justified the use of RFM for data mining and clustering
+
+🧩 IMPORTANCE OF WEEK 3 TO THE PROJECT
+
+Week 3 formed the analytical backbone of the project by connecting Data Cleaning (Week 2) to Data Mining & Modeling (Subsequent Weeks). All predictive and clustering models are built on the validated insights produced during this phase.
 
 ### Week 4 member 4 Dennis
 ## 1. Customer Segmentation (K-Means & RFM) 🧑‍🤝‍🧑

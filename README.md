@@ -42,6 +42,104 @@ Our analysis focuses on solving key business problems through data-driven insigh
 
 
 ### Members contribution
+## Member 1 Daisy Yano
+📌 Week 1 Summary – Data Acquisition, Documentation & Initial Exploration
+
+Week 1 focused on building a solid foundation for the data mining project by sourcing the dataset, understanding its structure, and assessing its initial quality. This phase ensured that the team would proceed with reliable, well-understood data, enabling strategic cleaning and preparation in the following weeks.
+
+🛰️ Dataset Acquisition
+
+The dataset was obtained from Data.gov, a credible open-data platform. A stable connection to the API was established and the raw e-commerce retail dataset was downloaded and stored in the project’s raw_data directory.
+
+The dataset contained key transactional attributes such as:
+
+Invoice Number
+
+Stock Code
+
+Product Description
+
+Quantity
+
+Invoice Date
+
+Unit Price
+
+Customer ID
+
+Country
+
+Ensuring the presence of these fields confirmed that the dataset was suitable for customer behavior, market basket analysis, and segmentation tasks.
+
+📚 Data Documentation
+
+A comprehensive data dictionary was created to formally describe:
+
+Feature names
+
+Definitions/meaning
+
+Data types
+
+Expected value formats/ranges
+
+Alongside this documentation, a report was generated highlighting the dataset’s initial data quality issues, including:
+
+Missing Customer IDs and Descriptions
+
+Duplicate transactions
+
+Inconsistent country names (spelling variations)
+
+Negative or zero values in Quantity and UnitPrice
+
+Blank or improperly formatted Invoice Dates
+
+This documentation provided a clear road map for the data cleaning phase.
+
+📊 Initial Data Exploration
+
+Exploratory inspection of the dataset was performed using Python (Pandas). The analysis focused on dataset structure, numeric ranges, and integrity.
+
+The following checks were executed:
+
+📌 Structural and Metadata Inspection
+
+print(data.info())
+print(data.head())
+
+
+📌 Data Integrity Assessment
+
+Missing values count
+
+Duplicate records
+
+Summary statistics for numeric and categorical attributes
+
+📌 Validity Checks
+
+Negative or zero Quantity and UnitPrice
+
+Outliers using descriptive statistics
+
+Inconsistent Country values
+
+negative_qty = data[data['Quantity'] <= 0]
+negative_price = data[data['UnitPrice'] <= 0]
+print(data['Country'].unique())
+
+
+These inspections revealed anomalies that required removal, standardization, or flagging before further processing.
+
+Week 1 established the essential groundwork for the entire data mining pipeline by ensuring:
+✔️ A valid and complete dataset was secured
+✔️ All variables were documented and clearly defined
+✔️ Data quality issues were discovered early
+✔️ Cleaning decisions were based on evidence, not assumptions
+
+This foundational work ensures that upcoming cleaning, encoding, mining, and modeling steps will be accurate, reliable, and meaningful for real business insights.
+
 ## Week 2 member 2 Gachunga Gift
 Detailed Week 2 Contribution Summary
 

@@ -211,23 +211,27 @@ The statistical and correlation analyses carried out during this week ensure tha
 ✅ The dataset is well-understood, reliable, and analytically sound
 ✅ Features selected for mining are justified by statistical evidence
 ✅ All predictive, clustering, and rule-mining models are built on a validated exploratory foundation rather than assumptions
+
 ### Week 4 member 4 Dennis
 ## 1. Customer Segmentation (K-Means & RFM) 🧑‍🤝‍🧑
 
 This part of the project aimed to group customers into distinct segments based on their purchasing behavior (RFM metrics).
-Implementation Steps
+Implementation Steps:
 
     Data Preparation: The first step was filtering the rfm_df to exclude unknown customers (CustomerID != '-1'). This cleaned dataset was then MinMax scaled to normalize the Recency, Frequency, and Monetary values between 0 and 1. This scaling is crucial for K-Means, which relies on distance calculations.
 
     Optimal K Determination (Silhouette Score):
 
-        You iterated K-Means from K=2 to K=10.
+        We iterated K-Means from K=2 to K=10.
 
         The Silhouette Score was calculated for each K to measure how similar an object is to its own cluster compared to other clusters.
 
         Result Analysis (Silhouette Plot): The printed scores and the plot show that K=2 (Score: 0.7397) yielded the highest Silhouette Score. This result statistically suggested that two clusters were the most well-defined and separated groups.
+# graph of silhouette score analysis
+<img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/995204c9-3f7b-4029-80f2-97eee71724cb" />
 
-    Final Clustering: Although K=2 was optimal, you chose K=4 for the final segmentation to introduce more variety and potentially discover more granular customer segments, acknowledging that the higher K would result in slightly less distinct clusters (Score: 0.6132).
+
+    Final Clustering: Although K=2 was optimal, we chose K=4 for the final segmentation to introduce more variety and potentially discover more granular customer segments, acknowledging that the higher K would result in slightly less distinct clusters (Score: 0.6132).
 
     Cluster Assignment and Visualization: The Cluster ID was assigned to each customer. The Frequency vs. Monetary scatter plots were generated, with the second, "Zoomed In" plot, effectively mitigating the visual distortion caused by extreme outliers (very high Frequency/Monetary customers) to show the main cluster distribution more clearly.
 
@@ -241,10 +245,14 @@ The K-Means clustering yielded four distinct customer segments based on their av
 
 | Cluster | Avg. R Score | Avg. F Score | Avg. M Score | Segment Name | Rationale & Recommended Action |
 | :---: | :---: | :---: | :---: | :---: | :--- |
-| **1** | 4.2 (Highest) | 3.6 (High) | 3.6 (High) | **VIP / Champions** | Highest scores across all metrics. **Action:** Implement exclusive **loyalty rewards** and high-touch service to maintain retention. |
-| **3** | 2.5 (Medium) | 2.7 (Medium) | 2.9 (Medium-High) | **Average Value** | Solid customers, but with room for growth. **Action:** Focus on **upselling** and personalized offers to move them into the VIP category. |
-| **2** | 1.5 (Low) | 2.3 (Low-Medium) | 2.3 (Low-Medium) | **Needs Attention** | Low Recency (1.5) and moderate F/M. Could be New Customers or Hibernating. **Action:** **Onboarding** or reactivation campaigns to encourage repeat purchases. |
-| **0** | 1.0 (Lowest) | 1.8 (Low) | 1.8 (Low) | **Churn Risk / Lost** | Very low Recency indicates they haven't bought recently. **Action:** Launch aggressive **win-back campaigns** and discounts to reactivate them. |
+| **2** | 4.2 (Highest) | 3.6 (High) | 3.6 (High) | **VIP / Champions** | Highest scores across all metrics. **Action:** Implement exclusive **loyalty rewards** and high-touch service to maintain retention. |
+| **2** | 2.5 (Medium) | 2.7 (Medium) | 2.9 (Medium-High) | **Average Value** | Solid customers, but with room for growth. **Action:** Focus on **upselling** and personalized offers to move them into the VIP category. |
+| **3** | 1.5 (Low) | 2.3 (Low-Medium) | 2.3 (Low-Medium) | **Needs Attention** | Low Recency (1.5) and moderate F/M. Could be New Customers or Hibernating. **Action:** **Onboarding** or reactivation campaigns to encourage repeat purchases. |
+| **1** | 1.0 (Lowest) | 1.8 (Low) | 1.8 (Low) | **Churn Risk / Lost** | Very low Recency indicates they haven't bought recently. **Action:** Launch aggressive **win-back campaigns** and discounts to reactivate them. |
+
+## graph of k-means cluster characteristics
+<img width="846" height="547" alt="image" src="https://github.com/user-attachments/assets/8bbd28f0-710c-4769-8bf3-4305474ae348" />
+
 
 Key Takeaways
 
@@ -254,19 +262,26 @@ Key Takeaways
 
 ## B. Cluster Sizes
 
-The bar chart for customer counts provides context on the size of each segment. * Cluster 2 (VIP/Champions) is the largest segment (over 2000 customers), which is highly positive for the business.
+The bar chart for customer counts provides context on the size of each segment. * Cluster 1 (VIP/Champions) is the largest segment (over 2000 customers), which is highly positive for the business.
 
-    Cluster 0 (Average/Medium) is the next largest (approx. 1000 customers).
+    Cluster 2 (Average/Medium) is the next largest (approx. 1000 customers).
 
-    Cluster 1 (Churn Risk/Lost) is the smallest (approx. 500 customers).
+    Cluster 3 (Churn Risk/Lost) is the smallest (approx. 500 customers).
 
 ## C. Snake Plot
+
+## Snake plot of cluster profiles for k=4
+<img width="859" height="547" alt="image" src="https://github.com/user-attachments/assets/014bf87f-21b9-4bf2-92b8-167d8a4cd68b" />
+
+
 
 The Snake Plot visualizes the average scaled RFM values (actual Recency/Frequency/Monetary values, not the 1-5 scores). It clearly shows the profile of each cluster: * Cluster 2 (Green Line - VIP/Champions): Stands out dramatically with the highest scaled Frequency and Monetary values, confirming they are the highest value group. They also have the highest scaled Recency (most recent purchases).
 
     Cluster 0 (Purple Line - Average/Medium): Has moderately high values, especially in Monetary.
 
     Clusters 1 and 3 (Yellow and Blue Lines): Show generally low scaled values across all metrics compared to Cluster 2.
+
+    
 
 ## 2. Market Basket Analysis (FP-Growth/Apriori) 🛒
 
@@ -292,6 +307,11 @@ Results and Analysis of Association Rules
 
 The frequent itemsets and association rules derived from the full year provide the most robust, generalizable patterns. The generated visualisations, such as the top itemsets, show which combinations of products are bought together most frequently (high Support).
 
+## Graph of the top 15 itemsets bought together
+<img width="1661" height="547" alt="image" src="https://github.com/user-attachments/assets/b880dbcf-0085-423b-81ef-89c48e15b08c" />
+
+
+
     Interpretation of Top Rules (sorted by Lift): Rules with a high Lift indicate a strong relationship between the antecedent (product bought) and the consequent (product also bought), beyond random chance. These are the most valuable for recommendations.
 
         Example: If a top rule is {Item A} → {Item B} (Lift=5.0), it means customers who buy Item A are 5 times more likely to buy Item B than an average customer.
@@ -299,10 +319,16 @@ The frequent itemsets and association rules derived from the full year provide t
 # B. Monthly Analysis (Apriori)
 
 Running Apriori month-by-month allows you to identify seasonal or short-term trends in product associations that might be masked in the annual data.
+# For example in February 
+## Graph of the top 15 itemsets bought together in february
+<img width="1921" height="547" alt="image" src="https://github.com/user-attachments/assets/62f91c50-651d-408a-ad23-2b5ae96e83f1" />
 
-    Example: A specific combination of products might have a very high support in December (Christmas items) but low support the rest of the year. This helps tailor monthly promotions.
+
+
+    Example: It seems once a customer buys the green regency teacup and saucer they are likely to also buy roses  regency teacup and saucer, this relationship is only seen in February
 
 The monthly plots of the Top 15 Frequent Itemsets (Combinations Only) are crucial for visually inspecting the consistency and changes in popular product bundles throughout the year.
+
 
 ## 🧾 Dataset Description
 

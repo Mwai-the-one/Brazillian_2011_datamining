@@ -156,11 +156,11 @@ To prepare the data for market basket mining, scaling was applied to Quantity an
 Overall, the Week 2 work produced a comprehensive, well-cleaned, validated, and fully encoded dataset pipeline that transforms raw retail data into structured, analysis-ready inputs suitable for advanced data mining processes.
 📊 EXPLORATORY DATA ANALYSIS (EDA)
 
-👩‍💻 Member 3: Whitney Gituara – Statistical Analysis & Correlation Studies
+# 👩‍💻 Member 3: Whitney Gituara – Statistical Analysis & Correlation Studies
 
 As Member 3, I led the statistical analysis and correlation assessment phase of the Exploratory Data Analysis (EDA). My role focused on extracting meaningful numerical insights from the cleaned dataset and quantifying relationships between key customer behavior variables to support informed business decision-making and the upcoming data mining phase.
 
-📈 SUMMARY STATISTICS & DISTRIBUTION ANALYSIS
+## 📈 SUMMARY STATISTICS & DISTRIBUTION ANALYSIS
 
 Descriptive statistics were computed for the core numerical variables Quantity and TotalPrice, including the mean, standard deviation, minimum, maximum, and quartiles. This provided insight into:
 
@@ -170,7 +170,7 @@ Descriptive statistics were computed for the core numerical variables Quantity a
 
 Skewness and kurtosis were further evaluated to assess distribution shape and suitability for modeling.
 
-🌍 COUNTRY-LEVEL STATISTICAL INSIGHTS
+## 🌍 COUNTRY-LEVEL STATISTICAL INSIGHTS
 
 Average purchase values were computed per country to:
 
@@ -180,12 +180,12 @@ Average purchase values were computed per country to:
 
 The number of unique countries and unique product descriptions was also calculated to evaluate overall market reach and product diversity.
 
-🗺️ DISTRIBUTION OF PURCHASES ACROSS COUNTRIES
+## 🗺️ DISTRIBUTION OF PURCHASES ACROSS COUNTRIES
 
 ![Distribution of Purchases by Country](images/country_distribution.png)
 <img width="597" height="589" alt="image" src="https://github.com/user-attachments/assets/68b7b13e-ea5f-42a1-8b5a-62556ee920d7" />
 
-🔍 Findings
+### 🔍 Findings
 
 🇬🇧 The United Kingdom overwhelmingly dominates transaction volume.
 
@@ -193,24 +193,24 @@ The number of unique countries and unique product descriptions was also calculat
 
 ⚠ Several countries exhibit minimal customer activity.
 
-💼 Business Interpretation
+## 💼 Business Interpretation
 
 The business is highly dependent on the UK market.
 
 International sales remain underdeveloped.
 
-🚀 Strategic Implication
+## 🚀 Strategic Implication
 
 Strong opportunity exists for international market expansion.
 
 Heavy dependence on one country increases geographic business risk.
 
-🔗 CORRELATION & RELATIONSHIP ANALYSIS (RFM METRICS)
+## 🔗 CORRELATION & RELATIONSHIP ANALYSIS (RFM METRICS)
 
 ![RFM Correlation Heatmap](images/rfm_correlation_heatmap.png)
 <img width="515" height="435" alt="image" src="https://github.com/user-attachments/assets/36a6559a-aa23-4ff9-be3d-8daa9b168d00" />
 
-🔍 Findings
+### 🔍 Findings
 
 🔁 Frequency and Monetary exhibit a near-perfect positive correlation.
 
@@ -224,11 +224,11 @@ The RFM framework is statistically valid for customer segmentation.
 
 Frequency and Monetary should receive higher weighting in clustering models.
 
-💰 TOTAL PURCHASES PER COUNTRY
+## 💰 TOTAL PURCHASES PER COUNTRY
 ![Total Purchases per Country](images/total_purchases_per_country.png)
 <img width="1187" height="590" alt="image" src="https://github.com/user-attachments/assets/8251af68-16a3-46c3-a6d7-5be69219b4ea" />
 
-🔍 Findings
+### 🔍 Findings
 
 🇬🇧 The United Kingdom contributes the majority of total revenue.
 
@@ -236,20 +236,20 @@ Frequency and Monetary should receive higher weighting in clustering models.
 
 ⚠ Revenue is highly concentrated geographically.
 
-💼 Business Implication
+## 💼 Business Implication
 
 There is high exposure to financial risk due to revenue concentration.
 
 Expansion into secondary international markets is strongly recommended.
 
-⭐ KEY IMPACT OF MY CONTRIBUTION
+## ⭐ KEY IMPACT OF MY CONTRIBUTION
 
 ✅ Provided deep statistical validation beyond basic visualization
 ✅ Quantified hidden relationships in customer purchasing behavior
 ✅ Built a strong numerical foundation for customer segmentation and predictive modeling
 ✅ Statistically justified the use of RFM for data mining and clustering
 
-🧩 IMPORTANCE OF WEEK 3 TO THE PROJECT
+## 🧩 IMPORTANCE OF WEEK 3 TO THE PROJECT
 
 Week 3 formed the analytical backbone of the project by connecting Data Cleaning (Week 2) to Data Mining & Modeling (Subsequent Weeks). All predictive and clustering models are built on the validated insights produced during this phase.
 

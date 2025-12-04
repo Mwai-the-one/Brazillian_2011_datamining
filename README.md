@@ -414,6 +414,12 @@ The **Strategic Dashboard** in Notebook 4 visualizes:
 3.  **Market Basket Opportunities:** Displays the top product associations with the highest "Lift," identifying candidates for product bundling.
 4.  **Geographic Performance:** Highlights the top revenue-generating countries.
 
+   ### 📊 Strategic Dashboard
+Here is the final view of our analysis, combining seasonality, clusters, and market basket rules:
+
+
+![week5_dashboard](https://github.com/user-attachments/assets/1182ade1-9f0b-40a7-abb9-1b88cb4e641e)
+
 ### 🚀 How to Run the Dashboard
 To generate the dashboard and insights, follow these steps:
 
@@ -425,6 +431,7 @@ To generate the dashboard and insights, follow these steps:
     jupyter notebook notebooks/4_insights_dashboard.ipynb
     ```
 3.  **View Output:** Run all cells to generate the 5-panel Matplotlib/Seaborn visualization grid.
+
 
 ### 💡 Key Findings
 * **Segmentation:** The "VIP" cluster drives the highest revenue despite not being the largest group; retention efforts should focus here.

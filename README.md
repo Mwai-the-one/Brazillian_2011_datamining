@@ -156,7 +156,7 @@ To prepare the data for market basket mining, scaling was applied to Quantity an
 Overall, the Week 2 work produced a comprehensive, well-cleaned, validated, and fully encoded dataset pipeline that transforms raw retail data into structured, analysis-ready inputs suitable for advanced data mining processes.
 📊 EXPLORATORY DATA ANALYSIS (EDA)
 
-# 👩‍💻 Member 3: Whitney Gituara(528) – Statistical Analysis & Correlation Studies
+# 👩‍💻 Member 3 -> Week 3: Whitney Gituara(528) – Statistical Analysis & Correlation Studies
 
 As Member 3, I led the statistical analysis and correlation assessment phase of the Exploratory Data Analysis (EDA). My role focused on extracting meaningful numerical insights from the cleaned dataset and quantifying relationships between key customer behavior variables to support informed business decision-making and the upcoming data mining phase.
 
